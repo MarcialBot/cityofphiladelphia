@@ -11,7 +11,7 @@
                 </figure>
             </div>
         </div>
-        <div class="has-background-link">
+        <div class="has-background-link" textcolor="has-text-white">
             <div class="container">
                 <Footer bgcolor="has-background-link" textcolor="has-text-white"></Footer>
             </div>
@@ -20,8 +20,9 @@
 </template>
 
 <script>
-import Header from "@/views/Header.vue"
+import Header from "@/components/Header.vue"
 import Footer from "@/components/Footer.vue"
+
 
 export default {
   name: "About",
@@ -35,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+    .hero.is-info {
+        background-color: #FFFABC;
+        } 
+</style>

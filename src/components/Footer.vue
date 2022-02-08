@@ -2,7 +2,16 @@
   <div>
     <div class="columns">
       <div class="column">
-        Address
+        <ul>
+            <li>
+                Address
+            </li>
+            <li>
+                {{ info.address_1 }} 
+            </li>
+            <li>
+            </li>
+        </ul>
       </div>
       <div class="column">
         Hours
@@ -15,12 +24,21 @@
 </template>
 
 <script>
+  import axios  from 'axios'
+
   export default {
     name: 'Footer',
     methods: {},
     data() {
-      return {}
+      return {
+          info: null
+          }
     },
-    created() {}
-  }
+    created() {
+    },
+    mounted() {
+        axios.get('https://locations-staging-admin.phila.gov/love-park/wp-json/locations/v1/connect')
+        .then(response => (this.info = response.data.address))
+    },
+    }
 </script>
