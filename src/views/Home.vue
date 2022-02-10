@@ -2,10 +2,14 @@
     <div class="home">
         <Header></Header>
         <div class="container content-align is-overlay">
-            <figure class="image">
-              <img src="../assets/images/love-park-hero.jpeg">
-            </figure>
-                <Footer bgcolor="has-background-link" textcolor="has-text-black"></Footer>
+            <div class="columns is-mobile">
+                <div class="column">
+                    <figure class="image is-fullwidth">
+                      <img src="../assets/images/love-park-hero.jpeg">
+                    </figure>
+                    <Footer class="has-text-black" bgcolor="has-background-link"></Footer>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -24,8 +28,11 @@
 </script>
 
 <style scoped>
+  .hero-body{
+      background-color: black;
+  }
   .hero.is-info .title {
-      color: black;
+      color: black !important;
   }
   .navbar-end {
       color: black;

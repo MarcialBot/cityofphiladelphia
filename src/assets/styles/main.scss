@@ -1,4 +1,3 @@
-@import '~bulma';
 
 .content-align {
   position: relative;
@@ -7,3 +6,12 @@
   border: 10px solid white;
   background: white;
 }
+
+$navbar-burger-color: #444444;
+$navbar-item-hover-color: white !important; 
+$navbar-item-active-background-color: #444444;
+$navbar-burger-color: #444444 !important;
+$navbar-item-active-background-color: transparent !important;
+
+@import '~bulma';
+@import '~bulma-extensions';
