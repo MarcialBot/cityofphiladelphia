@@ -1,5 +1,9 @@
 # City of Philadelphia
-## Software Engineering Fellow excercise
+
+## About the Project
+This website design was based on specifications provided from the assets I had received. Bulma was used for styling
+the application. Vue.js was the framework used to manage components. I made various updates to some small structural details
+based on my knowledge of Vue. 
 
 ## Getting Started
 
@@ -10,11 +14,6 @@
 ## Technologies Used
 - Bulma & Bulma extensions
 - Vue.js
-
-## About the Project
-The website design was based on specifications provided from the assets I had received. Bulma was used for styling
-the application. Vue.js was the framework used to manage components. I made various updates to some small structural details
-based on my knowledge of Vue. 
 
 ## Requirements & Considerations
 - Use Vue.js to build two pages of this website (Home, and About). Users should be able to use the navigation in the top right corner to travel between pages. The logo should link to the homepage.
