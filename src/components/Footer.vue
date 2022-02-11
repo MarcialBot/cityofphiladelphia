@@ -1,8 +1,7 @@
 <template>
   <footer>
-  <div class="container is-justify-content-space-around">
-    <div class="columns is-align-self-center	">
-      <div class="column is-one-third">
+    <div class="columns is-centered">
+      <div class="column is-narrow">
         <ul>
         <b> Address </b>
             <li>
@@ -20,24 +19,35 @@
             <li>
                <a v-bind:href="address.map_url">Map</a> 
             </li>
-</ul>
+        </ul>
       </div>
       <div class="is-divider-vertical"/>
-      <div class="column is-one-third">
+      <div class="column is-3">
           <ul>
           <b>Hours</b>
-                <li v-for="(value, name) in hours" v-bind:key="name.id">
-                  <div v-if="name.toUpperCase() === date.toUpperCase() &&  value.exception == 1">
-                      {{ value.exception_thursday }} {{ value.exception_wednesday }}
-                  </div>
-                  <div v-else-if="name.toUpperCase() === date.toUpperCase() && value.exception != 1">
-                      {{ value.start_time }} - {{ value.end_time }}
-                  </div>
-                </li>
-            </ul>
+              <li v-for="(value, name) in hours" v-bind:key="name.id">
+                <div v-if="name.toUpperCase() === date.toUpperCase() &&  value.exception == 1">
+                    {{ value.exception_thursday }} {{ value.exception_wednesday }}
+                </div>
+                <div v-else-if="name.toUpperCase() === date.toUpperCase() && value.exception != 1">
+                    {{ value.start_time }} - {{ value.end_time }}
+                </div>
+                
+              </li>
+              <li>
+                <a v-on:click="isHidden = !isHidden">See all hours</a> 
+              </li>
+          </ul>
+                <div class="notification is-full is-full-mobile has-background-dark has-text-white-ter" v-if="!isHidden" >
+                  <ul>
+                    <li v-for="(value, name) in hours" v-bind:key="name.id">
+                      {{ capitalize(name) }}: {{ value.start_time }} - {{ value.end_time }} 
+                    </li>                    
+                  </ul>
+                </div>
       </div>
       <div class="is-divider-vertical"/>
-      <div class="column is-one-third">
+      <div class="column is-narrow">
            <ul>
                 <b>
                     Contact
@@ -46,17 +56,15 @@
                     {{ contact.email }} 
                 </li>
                 <li> 
-                    {{ contact.phone}} 
+                    {{ contact.phone }} 
                 </li>
                 <li> 
-                   <a v-bind:href="contact.twitter"> <font-awesome-icon :icon="['fab', 'twitter']" /></a>
-                   <a v-bind:href="contact.facebook"> <font-awesome-icon :icon="['fab', 'facebook']" /></a>
+                   <a v-bind:href="contact.twitter"><font-awesome-icon :icon="['fab', 'twitter']" /></a>
+                   <a v-bind:href="contact.facebook"><font-awesome-icon :icon="['fab', 'facebook']" /></a>
                    <a v-bind:href="contact.insta"> <font-awesome-icon :icon="['fab', 'instagram']" /></a>
                 </li>
            </ul>
-
-      </div>
-      </div>
+        </div>
       </div>
   </footer>
 </template>
@@ -72,6 +80,11 @@
           this.date = today.toString();
           console.log(today);
         },
+      capitalize(value) {
+        if (!value) return '' 
+        value = value.toString();
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      }
     },
     data() {
       return {
@@ -80,7 +93,8 @@
           contact: [],
           hours: [],
           loading: true,
-          errored: false
+          errored: false,
+          isHidden: true,
           }
     },
     created() {

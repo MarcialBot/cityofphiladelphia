@@ -1,27 +1,27 @@
 <template>
   <section class="hero is-info is-small">
-    <div class="hero-head">
-        <div class="container">
-            <Navbar/>  
+      <div class="hero-head">
+        <div class="columns is-mobile is-centered">
+          <div class="column is-three-fifths">
+            <Navbar/>
+          </div>
         </div>
-    </div>
+      </div>
     <div class="hero-body">
-        <div class="container has-text-left">
-        <div class="columns is-mobile">
-            <div class="column is-one-quarter" style="width: 200px;">
-                <router-link to="/">
-                   <figure class="image">
-                      <img class="banner-image" src="../assets/images/love-park-logo.png">
-                   </figure>
-                </router-link> 
+        <div class="columns is-mobile is-centered">
+          <div class="column is-three-fifths is-offset-2" style="width: 200px;">
+            <router-link to="/">
+             <figure class="image">
+              <img class="banner-image" src="../assets/images/love-park-logo.png">
+             </figure>
+            </router-link> 
+          </div>
+          <div class="column is-three-fifths">
+            <div class="container title-wrapper has-text-left">
+               <h1 class="title is-3-mobile has-text-dark"> Spring Into LOVE</h1>
             </div>
-            <div class="column is-two-thirds">
-                <div class="container title-wrapper has-text-left">
-                   <h1 class="title is-1 has-text-dark"> Spring Into LOVE</h1>
-                </div>
-            </div>
-        </div>
-        </div>
+          </div>
+      </div>
     </div>
   </section>
 </template>
@@ -57,8 +57,11 @@
 </script>
 
 <style scoped>
-  .banner-image {
-    max-height: 200px;
+  .banner-image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%; 
     padding-bottom: 25px;
   }
   .title-wrapper {

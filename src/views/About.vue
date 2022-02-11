@@ -2,25 +2,25 @@
     <div class="about">
         <Header></Header>
         <div class="container content-align is-overlay">
-            <div class="columns">
-                <div class="column">
+            <div class="columns is-mobile is-centered">
+                <div class="column is-three-fifths">
                     <h3 class="subtitle is-3">{{ info.title  }}</h3>
                 </div>
             </div>
-            <div class="columns">
-                <div class="column has-text-justified"> <span v-html="info.content"></span>
+            <div class="columns is-mobile is-centered">
+                <div class="column is-three-fifths is-fullwidth-mobile"> <span v-html="info.content"></span>
                 </div>
             </div>
-            <div class="columns">
-                <div class="column is-one-quarter is-offset-4">
+            <div class="columns is-mobile is-centered">
+                <div class="column is-two-fifths">
                     <figure class="image">
                         <img src="../assets/images/parks-and-rec-logo.png">
                     </figure>
                 </div>
             </div>
         </div>
-        <div class="has-background-link">
-            <div class="container">
+        <div class="columns is-mobile is-centered has-background-link">
+            <div class="column is-three-fifths">
                 <Footer bgcolor="has-background-link" class="has-text-white"></Footer>
             </div>
         </div>

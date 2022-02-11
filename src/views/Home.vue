@@ -2,14 +2,18 @@
     <div class="home">
         <Header></Header>
         <div class="container content-align is-overlay">
-            <div class="columns is-mobile">
-                <div class="column">
+            <div class="columns is-mobile is-centered">
+                <div class="column is-three-fifths">
                     <figure class="image is-fullwidth">
                       <img src="../assets/images/love-park-hero.jpeg">
                     </figure>
-                    <Footer class="has-text-black" bgcolor="has-background-link"></Footer>
                 </div>
             </div>
+        </div>
+        <div class="columns is-mobile is-centered">
+          <div class="column is-three-fifths">
+            <Footer class="is-size-9 has-text-black" bgcolor="has-background-link"></Footer>
+          </div>
         </div>
     </div>
 </template>
